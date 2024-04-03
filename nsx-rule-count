@@ -1,0 +1,2 @@
+for n in $(summarize-dvfilter | grep -E '(^\s+name:\s+.*\.([2,4-9]|1[0-5]))$' | awk '{print $2}' ); do RULECOUNT=$(vsipioctl getrules -f $n | grep -i '\sat\s' | wc -l); COUNT=$(($COUNT + $RULECOUNT)); done
+echo $COUNT
