@@ -1,0 +1,5 @@
+Source VM;Source Network;Source IP;Source Netmask;Source Gateway;Destination VM;Destination Network;Destination IP;Destination Netmask;Destination Gateway;Protocol;Destination Port;Interval;Data
+web;ans-lab-web-seg-01;172.16.10.100;24;172.16.10.1;app;ans-lab-app-seg-01;172.16.11.101;24;172.16.11.1;TCP;8080;10;test
+app;ans-lab-app-seg-01;172.16.11.101;24;172.16.11.1;db;ans-lab-db-seg-01;172.16.12.102;24;172.16.12.1;TCP;3306;10;test
+client1;ans-client;192.168.199.200;24;192.168.199.1;web;ans-lab-web-seg-01;172.16.10.100;24;172.16.10.1;TCP;80;10;test
+client2;ans-client;192.168.199.202;24;192.168.199.1;web;ans-lab-web-seg-01;172.16.10.100;24;172.16.10.1;TCP;80;10;test
