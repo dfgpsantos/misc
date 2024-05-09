@@ -1,0 +1,80 @@
+client1:
+  name: client1
+  network_settings:
+    ip_address: 192.168.199.200
+    netmask: 24
+    default_gateway: 192.168.199.1
+    network: ans-client
+  talkers:
+  - protocol: TCP
+    port: 80
+    remote_address: 172.16.10.100
+    interval: 10
+    data: test
+  - protocol: TCP
+    port: 443
+    remote_address: 172.16.10.100
+    interval: 10
+    data: test
+client2:
+  name: client2
+  network_settings:
+    ip_address: 192.168.199.202
+    netmask: 24
+    default_gateway: 192.168.199.1
+    network: ans-client
+  talkers:
+  - protocol: TCP
+    port: 80
+    remote_address: 172.16.10.100
+    interval: 10
+    data: test
+  - protocol: TCP
+    port: 443
+    remote_address: 172.16.10.100
+    interval: 10
+    data: test
+web:
+  name: web
+  network_settings:
+    ip_address: 172.16.10.100
+    netmask: 24
+    default_gateway: 172.16.10.1
+    network: ans-lab-web-seg-01
+  listeners:
+  - protocol: TCP
+    port: 80
+  - protocol: TCP
+    port: 443
+  talkers:
+  - protocol: TCP
+    port: 8080
+    remote_address: 172.16.11.101
+    interval: 10
+    data: test
+app:
+  name: app
+  network_settings:
+    ip_address: 172.16.11.101
+    netmask: 24
+    default_gateway: 172.16.11.1
+    network: ans-lab-app-seg-01
+  listeners:
+  - protocol: TCP
+    port: 8080
+  talkers:
+  - protocol: TCP
+    port: 3306
+    remote_address: 172.16.12.102
+    interval: 10
+    data: test
+db:
+  name: db
+  network_settings:
+    ip_address: 172.16.12.102
+    netmask: 24
+    default_gateway: 172.16.12.1
+    network: ans-lab-db-seg-01
+  listeners:
+  - protocol: TCP
+    port: 3306
